@@ -68,6 +68,16 @@ int initPinGPIO(int board)
         ret = 0;
         break;
     }
+    case BOARD_RPI_0_W: {
+        int tempPinGPIO[41] = { -1, -1, -1, -1, -1, -1, -1, 4, -1, -1, -1,
+                                17, -1, 27, -1, 22, 23, -1, -1, -1, -1,
+                                -1, 25, -1, -1, -1, -1, -1, -1, 5, -1,
+                                6, 12, 13, -1, 19, 16, 26, 20, -1, 21
+                               };
+        memcpy(pinGPIO, tempPinGPIO, sizeof(pinGPIO));
+        ret = 0;
+        break;
+    }
     default:
         ret = -1;
         break;
