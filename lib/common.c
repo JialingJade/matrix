@@ -145,6 +145,9 @@ static int getBoardType()
 		} else if (strncasecmp(info[1], "0001", 4)==0) {
 			ret = BOARD_NANOPC_T3;
 		}
+   } else if(strncasecmp(info[0], "BCM2835", 7)==0) {
+       if((info[1][3] == '0') && (info[1][4]=='c'))
+	ret = BOARD_RPI_0_W;
    }
     
     return ret;
